@@ -10,6 +10,7 @@ import {
   Container,
   CircularProgress
 } from "@mui/material";
+
 import { useDispatch } from "react-redux";
 import { addItem } from '../store/Slice'
 
@@ -17,6 +18,11 @@ import { addItem } from '../store/Slice'
 const API_URL = "http://localhost:5000/products";
 
 function ProductPage() {
+
+
+  const dispatch = useDispatch((state => { return state.cart }))
+
+  
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -34,7 +40,8 @@ function ProductPage() {
     fetchProducts();
   }, []);
   //add to cart iteration to get product data
-  const dispatch = useDispatch()
+  
+
   function addItemToCart(product) {
     dispatch(addItem(product))
   }
@@ -61,9 +68,9 @@ function ProductPage() {
                   {product.description.substring(0, 80)}...
                 </Typography>
                 <Typography variant="h6" color="primary" sx={{ mt: 2 }}>
-                  ${product.price}
+                  ₹{product.price}
                 </Typography>
-                <Button variant="contained" color="primary" fullWidth sx={{ mt: 2 }} onClick={() => addItemToCart(product)} >
+                <Button variant="contained" color="primary" fullWidth sx={{ mt: 2 }} onClick={() => { addItemToCart(product); }} >
                   Add to Cart
                 </Button>
               </CardContent>
