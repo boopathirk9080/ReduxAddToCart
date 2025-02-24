@@ -8,10 +8,10 @@ function Navbar() {
         <nav className="navbar">
             <h2 className="logo">MyShop</h2>
             <ul className="nav-links">
-                <Button> <Link to='/cart' ><MdOutlineShoppingCartCheckout  /></Link></Button>
+              
                 <Button><Link to="/">Home</Link></Button>
                 <Button><Link to="/products">Store</Link></Button>
-
+                <Button> <Link to='/cart' ><MdOutlineShoppingCartCheckout  /></Link></Button>
             </ul>
         </nav>
     );

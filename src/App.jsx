@@ -4,14 +4,24 @@ import ProductPage from './components/Products'
 import Home from "./components/Home";
 import Cart from "./components/Cart";
 
+
+
+if (!localStorage.getItem("cart")) {
+  localStorage.setItem("cart", JSON.stringify([]))
+}
+
+
+
+
 function App() {
+ 
+
 
   return (
     <>
 
       <Router>
         <Navbar />
-        {/* <ProductPage /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<ProductPage />} />

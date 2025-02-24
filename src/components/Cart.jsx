@@ -15,7 +15,7 @@ import { RiDeleteBin4Fill } from "react-icons/ri";
 import { removeItem, incrementQuantity, decrementQuantity } from "../store/Slice";
 import { removeAll } from "../store/Slice";
 import { useEffect, useState } from "react";
-
+// const dateFromWeb = JSON.parse(localStorage.getItem('cart'))
 
 function Cart() {
     const cartProducts = useSelector((state) => { return state.cart })
@@ -40,6 +40,7 @@ function Cart() {
     useEffect(() => {
         const total = cartProducts.reduce((sum, item) => sum + item.price * item.quantity, 0);
         setTotalPrice(total);
+       
     }, [cartProducts]);
 
     const handleCheckout = () => {
