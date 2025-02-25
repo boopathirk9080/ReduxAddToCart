@@ -22,7 +22,7 @@ function ProductPage() {
 
   const dispatch = useDispatch((state => { return state.cart }))
 
-  
+
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -40,7 +40,7 @@ function ProductPage() {
     fetchProducts();
   }, []);
   //add to cart iteration to get product data
-  
+
 
   function addItemToCart(product) {
     dispatch(addItem(product))
