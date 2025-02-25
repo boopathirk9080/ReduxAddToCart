@@ -15,7 +15,7 @@ import { useDispatch } from "react-redux";
 import { addItem } from '../store/Slice'
 
 
-const API_URL = "https://fakestoreapi.com/products";
+const API_URL = "http://localhost:5000/products";
 
 function ProductPage() {
 
